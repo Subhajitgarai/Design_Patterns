@@ -1,0 +1,203 @@
+Design Pattern:->In simpler terms, design patterns are like blueprints or 
+templates for solving common problems that are occuring Frequently in a
+structured and effective way.They help developers communicate efficiently,
+promote code organization, and allow for code that is more adaptable to changes.
+
+Any Patterns consists of 4 parts
+================================
+1.Pattern Name
+2.Problem
+3.Solution
+4.Consequences
+
+Types Of Design Patterns
+========================
+Purpouse:-
+==========
+Creational(Used for creating or initiatng objects and classes)
+==============================================================
+Factory Methode[Class]
+[For Objects]=>
+Abstract Methode
+Builder
+Prototype
+Singleton
+
+Stractural(Used for stracturing more than one classes or objects together Moreover
+we will deep into inheritance, Interface Segregation principle etc)
+==========================================================================
+Adapter[Class]
+[For Objects]
+Adapter
+Bridge
+Composite
+Decorator
+Facade
+Flyweight
+Proxy
+
+Behavioral(used to identify and setting up common communication patterns among Objects)
+=======================================================================================
+Interpreter[Class]
+Template Methode[Class]
+[For Objects]
+Chain of Responsibility
+Command
+iterator
+Mediator
+Memento
+Observer
+State
+Strategy
+===================================================================================
+Factory Methode Design Patterns:-
+=================================
+->It is a creational design pattern used for creating objects of similar types
+Abstract Class or Interface(Factory Class):
+==========================================
+This is a class or interface that declares a set of 
+methods without providing the implementation details. It defines a blueprint for 
+how the concrete classes should behave.
+
+Concrete Class:
+===============
+This is a class that provides specific implementations for the methods declared
+in the abstract class or interface. It completes the missingdetails and can be 
+instantiated to create objects. 
+
+RealWorld Applications for Factory Methode design Pattern
+==========================================================
+->Architects create  design and interfaces for the team
+->Calender and numberformats in java
+->Frameworks and Library
+
+Pros:->
+1.Gurantees Abstraction
+2.Code is flexible and adaptable
+3.Very useful for frameworks and libaries
+
+Cons:->
+1.Complex code
+2.Takes time to set the base
+3.Not a patters that can be refactorted into
+
+summary:->
+---------
+->Useful for creation of objects that fall under same categorization but still
+have different properties. 
+->Hiding the complexity.
+
+=====================================================================================
+Builder Design Pattern->
+------------------------
+It is a creational design pattern. Used for creation complex objects.
+Solves the problems of complex constructors.It used to avoid constructor 
+Overoading.
+
+Telescope constructor-> 
+class Subha{
+	int a,b,c;
+	Subha(int a,int b){
+		this.a=a;
+		this.b=b;
+	}
+	Subha(int a,int b,int c){
+		this(a,b);//Telescope Constructor
+		this.c=c;
+	}
+}
+
+
+Pros:->
+-------
+1.Easy to implement
+2.Can be refactored into
+3.Good way to handle complexity
+
+Cons:->
+-------
+1.Class Instance returned is immutable
+2.Uses innter static class
+3.Sometimes no of lines of the code can be huge
+
+05/01/2024
+==========
+
+Abstract Factory Design
+=======================
+It is creational design pattern. 
+Implemented using common interface. 
+It is a factory of factory pattern.
+Ex- Java Document Builder
+
+It has three Layers->
+1.Abstract Factory Interface<----Concrete Factory Interface<----Concrete object class
+
+It is same like factory design pattern Only difference is that it has one layer extra
+the Concrete factory interface
+
+Pros->
+Good for abstraction
+Loos Coupling betweeb client and actual code
+All classes follow single responsibility principle
+
+Cons->
+Code becomes complicated
+Pattern inside a pattern
+
+
+Singelton Design Pattern
+=========================
+Allows only to create one instance of a particular class.
+The Syntax for the following->Firstly create default private constructor and then create a static class type methode to return the
+object
+
+public class Singleton {
+    public static void main(String[] args) {
+//        Abc ob=new Abc();//Created private constructor sor we can not create id
+        //So the Only Way to Create a constructor is to call the getInstance() Methode
+        Abc ob=Abc.getInstance();//Same Instance is created again and again
+        Abc ob1=Abc.getInstance();//Here also same instance is created
+    }
+}
+
+class Abc{
+    //Steps to created Singleton class by which we can get only one instance of a class
+    static Abc ob=new Abc();
+    private Abc(){
+
+    }
+    public static Abc getInstance(){//Method is Abc Type because we want to return the object
+        return ob;
+    }
+}
+
+
+Adapter Design Pattern
+======================
+Example->Stream Classes
+Here we have to connect two interfaces which are not compitable to eachother by 
+using Adapter/Wrapper
+
+Basically there will be two interface and we have to conncet them without changing the 
+codes or implemetions of the intrfaces. Basically we have to use a adapter to connect both of this.
+
+Flyweight Design Pattern
+========================
+Flyweight pattern is an basically optimisation pattern. It is a stractural design pattern
+
+Used to optimise Ram usage by a lot of objects which shares some immutable states
+used also to minimise the space that is taken in the memory.
+It is particularly useful when a large number of similar objects need to be created,
+ and the overhead of creating each instance independently is significant.
+Example:- Cargames,Ecomerce apps etc.
+
+Intrensic attribute->Attributes that does not changes
+Extrinsic Attribute->Attributes that does changes
+
+
+
+
+
+
+
